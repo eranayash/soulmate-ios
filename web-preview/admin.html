@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soul Mate — Admin</title>
+  <link rel="stylesheet" href="shared/theme.css" />
+  <style>
+    .layout { display: flex; min-height: 100vh; }
+    .sidebar {
+      width: var(--sidebar-w); background: var(--bg); border-right: 1px solid rgba(255,255,255,.06);
+      padding: 24px 16px; display: flex; flex-direction: column; gap: 8px;
+      position: sticky; top: 0; height: 100vh;
+    }
+    .logo { font-size: 22px; font-weight: 800; margin-bottom: 20px; padding: 0 8px; }
+    .logo span { font-size: 11px; display: block; color: var(--text-3); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+      border-radius: 12px; border: none; background: transparent; color: var(--text-2);
+      font: 600 14px inherit; cursor: pointer; text-align: left; width: 100%;
+      transition: background .15s, color .15s;
+    }
+    .nav-item:hover { background: var(--surface); color: var(--text); }
+    .nav-item.active { background: linear-gradient(135deg, rgba(51,217,140,.15), rgba(140,89,242,.15)); color: var(--text); }
+    .nav-item .icon { font-size: 18px; width: 24px; text-align: center; }
+    .main { flex: 1; padding: 28px 32px 48px; max-width: 960px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+    .topbar h1 { font-size: 28px; font-weight: 800; }
+    .saved-pill {
+      display: none; align-items: center; gap: 6px; padding: 8px 14px;
+      background: rgba(51,217,140,.12); border: 1px solid rgba(51,217,140,.35);
+      border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--green);
+      animation: pop .3s cubic-bezier(.34,1.4,.64,1);
+    }
+    .saved-pill.show { display: inline-flex; }
+    @keyframes pop { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+    .stat {
+      background: linear-gradient(135deg, var(--surface-el), var(--surface));
+      border-radius: var(--radius); padding: 16px;
+    }
+    .stat .val { font-size: 28px; font-weight: 800; margin-top: 4px; }
+    .stat .lbl { font-size: 12px; color: var(--text-3); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+    .section { display: none; animation: fade .25s ease; }
+    .section.active { display: block; }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .section-title { font-size: 13px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: .06em; margin: 24px 0 12px; }
+    .section-title:first-child { margin-top: 0; }
+    .row {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 16px 18px; background: var(--surface); border-radius: var(--radius);
+      margin-bottom: 10px; cursor: pointer; transition: background .15s;
+    }
+    .row:hover { background: var(--surface-el); }
+    .row-info h3 { font-size: 16px; font-weight: 700; }
+    .row-info p { font-size: 13px; color: var(--text-3); margin-top: 3px; }
+    .row.danger { border: 1px solid rgba(255,89,102,.25); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 700px) {
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: static; flex-direction: row; overflow-x: auto; padding: 12px; }
+      .logo { display: none; }
+      .main { padding: 20px 16px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .input-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 14px 18px; background: var(--surface); border-radius: var(--radius); margin-bottom: 10px;
+    }
+    .input-row label { font-weight: 600; font-size: 15px; }
+    .input-row input, .input-row select {
+      width: 100px; padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.1);
+      background: var(--surface-el); color: var(--text); font: inherit; text-align: center;
+    }
+    .mood-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .mood-chip {
+      padding: 10px 14px; border-radius: 999px; border: 2px solid transparent;
+      background: var(--surface); font: 600 13px inherit; cursor: pointer; color: var(--text-2);
+      transition: all .15s;
+    }
+    .mood-chip.on { border-color: var(--green); background: rgba(51,217,140,.12); color: var(--text); }
+    .hint { font-size: 13px; color: var(--text-3); margin-top: 16px; line-height: 1.5; }
+    .links { margin-top: auto; padding-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo gradient-text">Soul Mate<span>Admin</span></div>
+      <button class="nav-item active" data-section="quick"><span class="icon">⚡</span> Quick</button>
+      <button class="nav-item" data-section="economy"><span class="icon">🪙</span> Tokens</button>
+      <button class="nav-item" data-section="features"><span class="icon">🎛</span> Features</button>
+      <button class="nav-item" data-section="system"><span class="icon">⚙️</span> System</button>
+      <div class="links">
+        <a class="btn btn-ghost" href="index.html" style="width:100%">← App Preview</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <h1 id="page-title">Quick Control</h1>
+        <div style="display:flex;gap:10px;align-items:center">
+          <span class="saved-pill" id="saved-pill">✓ Saved</span>
+          <a class="btn btn-ghost" href="index.html">Open App</a>
+        </div>
+      </div>
+
+      <div class="stats" id="stats"></div>
+
+      <!-- QUICK: 1-click toggles only -->
+      <div class="section active" id="sec-quick">
+        <p class="hint" style="margin-top:0;margin-bottom:16px">One tap per setting — saves automatically.</p>
+        <div id="quick-rows"></div>
+      </div>
+
+      <!-- ECONOMY -->
+      <div class="section" id="sec-economy">
+        <div class="section-title">Token economy</div>
+        <div id="economy-inputs"></div>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="section" id="sec-features">
+        <div class="section-title">Enabled moods</div>
+        <div class="mood-grid" id="mood-grid"></div>
+        <div class="section-title">Feature flags</div>
+        <div id="feature-rows"></div>
+      </div>
+
+      <!-- SYSTEM -->
+      <div class="section" id="sec-system">
+        <div class="section-title">Maintenance</div>
+        <div class="input-row">
+          <label for="maint-msg">Maintenance message</label>
+          <input id="maint-msg" type="text" placeholder="Optional" style="width:220px;text-align:left" />
+        </div>
+        <div class="section-title">Data</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-ghost" onclick="exportConfig()">Export JSON</button>
+          <button class="btn btn-ghost" onclick="resetDefaults()">Reset defaults</button>
+        </div>
+        <p class="hint">Settings stored in browser localStorage. Wire to Firebase/API in Phase 2.</p>
+        <p class="hint" style="margin-top:8px"><strong>Inspired by:</strong> <a href="https://github.com/TailAdmin/free-react-tailwind-admin-dashboard" style="color:var(--green)">TailAdmin</a> — simplified to toggles-only UX.</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'soulmate_admin_config';
+    const DEFAULTS = {
+      appLive: true,
+      matchingOn: true,
+      penpalSignup: true,
+      autoMatch: false,
+      maintenanceMode: false,
+      showDisclaimer: true,
+      chunkMinutes: 6,
+      graceSeconds: 30,
+      welcomeTokens: 3,
+      penpalReward: 1,
+      maxConcurrentChats: 50,
+      voiceChat: false,
+      moods: { anxious:true, lonely:true, stressed:true, excited:true, reflective:true, grateful:true },
+      maintenanceMessage: ''
+    };
+
+    let cfg = load();
+    let saveTimer;
+
+    function load() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? { ...DEFAULTS, ...JSON.parse(raw), moods: { ...DEFAULTS.moods, ...JSON.parse(raw).moods } } : { ...DEFAULTS, moods: { ...DEFAULTS.moods } };
+      } catch { return { ...DEFAULTS, moods: { ...DEFAULTS.moods } }; }
+    }
+
+    function save() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cfg));
+      const pill = document.getElementById('saved-pill');
+      pill.classList.add('show');
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => pill.classList.remove('show'), 1800);
+      renderStats();
+    }
+
+    function toggle(key) {
+      cfg[key] = !cfg[key];
+      save();
+      render();
+    }
+
+    function setNum(key, val) {
+      cfg[key] = Math.max(0, Number(val) || 0);
+      save();
+    }
+
+    function toggleMood(m) {
+      cfg.moods[m] = !cfg.moods[m];
+      save();
+      renderMoods();
+    }
+
+    function row(key, title, desc, danger) {
+      return `<div class="row ${danger?'danger':''}" onclick="toggle('${key}')">
+        <div class="row-info"><h3>${title}</h3><p>${desc}</p></div>
+        <button class="toggle ${cfg[key]?'on':''}" aria-label="${title}"></button>
+      </div>`;
+    }
+
+    function renderQuick() {
+      document.getElementById('quick-rows').innerHTML = [
+        row('appLive', 'App live', 'Master switch — off blocks all new chats'),
+        row('matchingOn', 'Matching', 'Seekers can find penpals'),
+        row('penpalSignup', 'Penpal signup', 'New penpals can go available'),
+        row('maintenanceMode', 'Maintenance mode', 'Show maintenance message to users', true),
+        row('showDisclaimer', 'Disclaimer', '“Not therapy” on onboarding'),
+        row('autoMatch', 'Auto-match', 'Skip penpal picker — connect instantly'),
+      ].join('');
+    }
+
+    function renderEconomy() {
+      const fields = [
+        ['chunkMinutes', 'Chunk duration (min)', 1, 30],
+        ['graceSeconds', 'Grace period (sec)', 0, 120],
+        ['welcomeTokens', 'Welcome tokens', 0, 20],
+        ['penpalReward', 'Penpal reward / chunk', 0, 10],
+        ['maxConcurrentChats', 'Max concurrent chats', 1, 500],
+      ];
+      document.getElementById('economy-inputs').innerHTML = fields.map(([k,l,min,max]) =>
+        `<div class="input-row">
+          <label>${l}</label>
+          <input type="number" min="${min}" max="${max}" value="${cfg[k]}"
+            onchange="setNum('${k}', this.value)" />
+        </div>`
+      ).join('');
+    }
+
+    function renderMoods() {
+      const labels = { anxious:'😰 Anxious', lonely:'🌙 Lonely', stressed:'⚡ Stressed', excited:'✨ Excited', reflective:'🪞 Reflective', grateful:'🙏 Grateful' };
+      document.getElementById('mood-grid').innerHTML = Object.keys(labels).map(m =>
+        `<button class="mood-chip ${cfg.moods[m]?'on':''}" onclick="toggleMood('${m}')">${labels[m]}</button>`
+      ).join('');
+    }
+
+    function renderFeatures() {
+      document.getElementById('feature-rows').innerHTML = [
+        row('voiceChat', 'Voice chat', 'Phase 2 — keep off for MVP'),
+      ].join('');
+    }
+
+    function renderStats() {
+      const live = cfg.appLive && !cfg.maintenanceMode;
+      document.getElementById('stats').innerHTML = `
+        <div class="stat"><div class="lbl">Status</div><div class="val" style="color:${live?'var(--green)':'var(--danger)'};font-size:18px">${live?'LIVE':'PAUSED'}</div></div>
+        <div class="stat"><div class="lbl">Chunk</div><div class="val">${cfg.chunkMinutes}m</div></div>
+        <div class="stat"><div class="lbl">Welcome</div><div class="val">${cfg.welcomeTokens}</div></div>
+        <div class="stat"><div class="lbl">Moods on</div><div class="val">${Object.values(cfg.moods).filter(Boolean).length}</div></div>`;
+    }
+
+    function render() {
+      renderQuick();
+      renderEconomy();
+      renderMoods();
+      renderFeatures();
+      renderStats();
+      document.getElementById('maint-msg').value = cfg.maintenanceMessage || '';
+    }
+
+    document.querySelectorAll('.nav-item[data-section]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const sec = btn.dataset.section;
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('sec-' + sec).classList.add('active');
+        const titles = { quick:'Quick Control', economy:'Token Economy', features:'Features', system:'System' };
+        document.getElementById('page-title').textContent = titles[sec];
+      });
+    });
+
+    document.getElementById('maint-msg').addEventListener('input', e => {
+      cfg.maintenanceMessage = e.target.value;
+      save();
+    });
+
+    function exportConfig() {
+      const blob = new Blob([JSON.stringify(cfg, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'soulmate-admin-config.json';
+      a.click();
+    }
+
+    function resetDefaults() {
+      if (confirm('Reset all admin settings to defaults?')) {
+        cfg = { ...DEFAULTS, moods: { ...DEFAULTS.moods } };
+        save();
+        render();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>

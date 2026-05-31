@@ -29,6 +29,19 @@ SoulMateApp/
 
 ## Quick Start
 
+### Option A — Web UI Preview (no Xcode needed)
+
+```bash
+./scripts/serve-preview.sh
+# Open http://localhost:4173
+```
+
+Interactive mirror of the SwiftUI screens: onboarding → dashboard → chat → wallet.
+
+**Admin panel:** http://localhost:4173/admin.html — one-click toggles, auto-save.
+
+### Option B — Native iOS (Xcode required)
+
 ```bash
 # 1. Generate Xcode project
 ./scripts/bootstrap.sh

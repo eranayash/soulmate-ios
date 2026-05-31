@@ -1,0 +1,48 @@
+/* Soul Mate shared theme */
+:root {
+  --bg: rgb(15, 18, 31);
+  --surface: rgb(31, 36, 56);
+  --surface-el: rgb(41, 46, 71);
+  --green: rgb(51, 217, 140);
+  --purple: rgb(140, 89, 242);
+  --pink: rgb(242, 89, 166);
+  --gold: rgb(255, 199, 64);
+  --text: #fff;
+  --text-2: rgba(255,255,255,.72);
+  --text-3: rgba(255,255,255,.45);
+  --danger: rgb(255, 89, 102);
+  --radius: 16px;
+  --sidebar-w: 220px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: #0a0c14;
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  color: var(--text);
+}
+.gradient-text {
+  background: linear-gradient(135deg, var(--green), var(--purple));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 18px; border: none; border-radius: var(--radius);
+  font: 700 15px inherit; cursor: pointer;
+  transition: transform .15s cubic-bezier(.34,1.4,.64,1);
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(135deg, var(--green), var(--purple)); color: var(--bg); }
+.btn-ghost { background: var(--surface); color: var(--text); text-decoration: none; }
+.toggle {
+  width: 52px; height: 30px; border-radius: 999px; border: none; cursor: pointer;
+  background: var(--surface-el); position: relative; transition: background .2s;
+  flex-shrink: 0;
+}
+.toggle.on { background: linear-gradient(135deg, var(--green), var(--purple)); }
+.toggle::after {
+  content: ''; position: absolute; top: 3px; left: 3px;
+  width: 24px; height: 24px; border-radius: 50%; background: #fff;
+  transition: transform .2s cubic-bezier(.34,1.4,.64,1);
+}
+.toggle.on::after { transform: translateX(22px); }
