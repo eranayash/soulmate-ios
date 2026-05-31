@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		036849961DFAA2295F25C040 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3335F562D2DD3058FD5DF74B /* SessionManager.swift */; };
+		05C773C7CE674792C351901F /* ChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B5F3D74B6B3390CF9C700 /* ChatSession.swift */; };
+		28EF4195C4D5CC5899AFD8FD /* SoulMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EF8489A52A0A15EE2B7F2A /* SoulMateApp.swift */; };
+		3A0788152335F4EC2B869BCB /* TokenBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A19999E0410A9188272A90 /* TokenBadge.swift */; };
+		45ECC7A1A49CF3450EDBE708 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4972712F0328EC35B1574 /* DashboardView.swift */; };
+		5575828262E6E3085AE5D477 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101817F15122D9624F424282 /* OnboardingView.swift */; };
+		588317EE28EDC5DF248D522F /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0958FF1016645B65381957 /* WalletView.swift */; };
+		5A4B33A996031C84C994F370 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B75261941836DFD1C72DE6F /* WalletViewModel.swift */; };
+		5A94FD51DE19C06DA94E1D15 /* TimeInterval+Chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C9205E1B6DB05DDADD38F0 /* TimeInterval+Chunk.swift */; };
+		6AA19DFEFB141502BBCAA0C6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1C9292C7019431CD309F8 /* User.swift */; };
+		7D7AC6F5740C0969C878A5C0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F9A752287F4870840B5C5F /* ChatViewModel.swift */; };
+		968C8A05691766B217352493 /* TokenEconomyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F41FB8B349BA4DB4D3AAD /* TokenEconomyService.swift */; };
+		980FA52046CE9B3D3038DE17 /* TimerOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CABCB0231AEA673AF235AD /* TimerOverlayView.swift */; };
+		99CE6A588AE29BE85AC17065 /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8083B05BBB5E70034349A2 /* ChatRoomView.swift */; };
+		9C223E03395DAF2D64F7990F /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78130C580816B461E05A8837 /* ChatService.swift */; };
+		A49BA9235186C4369B03A6F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAD61A06CB6A6069F75CB3 /* Colors.swift */; };
+		A6469E003D20EFEDC093F425 /* TokenEconomyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2CFD86627A47C7232179E /* TokenEconomyServiceTests.swift */; };
+		AAFA515915642D4F980605C5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E564A4961089E1CC954F1 /* CustomButton.swift */; };
+		CCDD30495299F1156D36E4D7 /* TokenTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEEC6E203FF84E703F5C8D /* TokenTransaction.swift */; };
+		D170D637D6F99EA8C402CFB7 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF486E30AAEC42321D3251EC /* Fonts.swift */; };
+		F430D8BD00871E533FEE25F3 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430E931EFC60A6855D0B20D /* DashboardViewModel.swift */; };
+		FBC670FED3394FC2F22776AA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3538EA7D854DD9CE725BB /* AppCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9A8248DCDE77B43D4FACCC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CA1EF1AC9F694363DE79BB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35467771BE62D1F5D7332B51;
+			remoteInfo = SoulMateApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05E3538EA7D854DD9CE725BB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		08CABCB0231AEA673AF235AD /* TimerOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerOverlayView.swift; sourceTree = "<group>"; };
+		091E371CA5040FBDACADFB21 /* SoulMateApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SoulMateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09C1C9292C7019431CD309F8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		101817F15122D9624F424282 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		106E564A4961089E1CC954F1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		29A19999E0410A9188272A90 /* TokenBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenBadge.swift; sourceTree = "<group>"; };
+		29FEEC6E203FF84E703F5C8D /* TokenTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTransaction.swift; sourceTree = "<group>"; };
+		3335F562D2DD3058FD5DF74B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		44EF8489A52A0A15EE2B7F2A /* SoulMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulMateApp.swift; sourceTree = "<group>"; };
+		4BE4972712F0328EC35B1574 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		51B2CFD86627A47C7232179E /* TokenEconomyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEconomyServiceTests.swift; sourceTree = "<group>"; };
+		7430E931EFC60A6855D0B20D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		78130C580816B461E05A8837 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		9B75261941836DFD1C72DE6F /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		9F0958FF1016645B65381957 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		A01B7A9CE48204532875FEB1 /* SoulMateAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SoulMateAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55B5F3D74B6B3390CF9C700 /* ChatSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSession.swift; sourceTree = "<group>"; };
+		BFFAD61A06CB6A6069F75CB3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CF486E30AAEC42321D3251EC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		E4C9205E1B6DB05DDADD38F0 /* TimeInterval+Chunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Chunk.swift"; sourceTree = "<group>"; };
+		F1F9A752287F4870840B5C5F /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		F78F41FB8B349BA4DB4D3AAD /* TokenEconomyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEconomyService.swift; sourceTree = "<group>"; };
+		FE8083B05BBB5E70034349A2 /* ChatRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0D1A138526DC5DC9F988C875 /* SoulMateApp */ = {
+			isa = PBXGroup;
+			children = (
+				A7E3F1A7A504DF8A783C9862 /* App */,
+				CDD12702F5A1F433B82EA089 /* Core */,
+				CB78A845EDD2D559ECD5A56E /* Features */,
+				7F0F32DF028AF1ED842F18AD /* Models */,
+				BB0CF7BF9908201B9C17A85F /* Services */,
+			);
+			path = SoulMateApp;
+			sourceTree = "<group>";
+		};
+		1539DD309273E59A86C4299A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7430E931EFC60A6855D0B20D /* DashboardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1ABC4B2A1BF08006D88CF06C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4972712F0328EC35B1574 /* DashboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		29B63E730A84D7A2F2F18851 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				92AED877CD5738F056014B56 /* ViewModels */,
+				82398EE5AEB89FBA4603F079 /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		36948F1B3AD49C174133E69C /* SoulMateAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				51B2CFD86627A47C7232179E /* TokenEconomyServiceTests.swift */,
+			);
+			path = SoulMateAppTests;
+			sourceTree = "<group>";
+		};
+		46D26FA962C4C7BE875E714E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4C9205E1B6DB05DDADD38F0 /* TimeInterval+Chunk.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CC6A81BD84D69FC14A220A3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C18310341AD4556C73ABFCDA /* Views */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7F0F32DF028AF1ED842F18AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A55B5F3D74B6B3390CF9C700 /* ChatSession.swift */,
+				29FEEC6E203FF84E703F5C8D /* TokenTransaction.swift */,
+				09C1C9292C7019431CD309F8 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82398EE5AEB89FBA4603F079 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE8083B05BBB5E70034349A2 /* ChatRoomView.swift */,
+				08CABCB0231AEA673AF235AD /* TimerOverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		92AED877CD5738F056014B56 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F1F9A752287F4870840B5C5F /* ChatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A7E3F1A7A504DF8A783C9862 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				05E3538EA7D854DD9CE725BB /* AppCoordinator.swift */,
+				44EF8489A52A0A15EE2B7F2A /* SoulMateApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A8BF5BE2ADCF447196413F96 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				BFFAD61A06CB6A6069F75CB3 /* Colors.swift */,
+				CF486E30AAEC42321D3251EC /* Fonts.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A9B2FAEA8A2CF6EC2B57F87C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9B75261941836DFD1C72DE6F /* WalletViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B2BCA6C649574AF1A4661E8F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				106E564A4961089E1CC954F1 /* CustomButton.swift */,
+				29A19999E0410A9188272A90 /* TokenBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BA2AEA767B8005987F5233DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F0958FF1016645B65381957 /* WalletView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB0CF7BF9908201B9C17A85F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				78130C580816B461E05A8837 /* ChatService.swift */,
+				3335F562D2DD3058FD5DF74B /* SessionManager.swift */,
+				F78F41FB8B349BA4DB4D3AAD /* TokenEconomyService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C18310341AD4556C73ABFCDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				101817F15122D9624F424282 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB78A845EDD2D559ECD5A56E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7CC6A81BD84D69FC14A220A3 /* Auth */,
+				29B63E730A84D7A2F2F18851 /* Chat */,
+				DB4DACA00A9022E0B3768067 /* Dashboard */,
+				E7EC08E3249DF6AE46164CD3 /* Wallet */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CDD12702F5A1F433B82EA089 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B2BCA6C649574AF1A4661E8F /* Components */,
+				46D26FA962C4C7BE875E714E /* Extensions */,
+				A8BF5BE2ADCF447196413F96 /* Theme */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D9171E72370941B034978035 = {
+			isa = PBXGroup;
+			children = (
+				0D1A138526DC5DC9F988C875 /* SoulMateApp */,
+				36948F1B3AD49C174133E69C /* SoulMateAppTests */,
+				E08AA4128BC3EEA3A97108D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB4DACA00A9022E0B3768067 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1539DD309273E59A86C4299A /* ViewModels */,
+				1ABC4B2A1BF08006D88CF06C /* Views */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E08AA4128BC3EEA3A97108D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				091E371CA5040FBDACADFB21 /* SoulMateApp.app */,
+				A01B7A9CE48204532875FEB1 /* SoulMateAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7EC08E3249DF6AE46164CD3 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				A9B2FAEA8A2CF6EC2B57F87C /* ViewModels */,
+				BA2AEA767B8005987F5233DF /* Views */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35467771BE62D1F5D7332B51 /* SoulMateApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 723A99F3F1BCAF2E7B0E642B /* Build configuration list for PBXNativeTarget "SoulMateApp" */;
+			buildPhases = (
+				F81D97EF60F1315F8A0B4A8C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoulMateApp;
+			packageProductDependencies = (
+			);
+			productName = SoulMateApp;
+			productReference = 091E371CA5040FBDACADFB21 /* SoulMateApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		508FE8D4E4384C56DDB0F3DA /* SoulMateAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB31BC789CD4EE437225BDFE /* Build configuration list for PBXNativeTarget "SoulMateAppTests" */;
+			buildPhases = (
+				B010441A0D8307A547194593 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5D0F28EEAA60C11AEEEE925 /* PBXTargetDependency */,
+			);
+			name = SoulMateAppTests;
+			packageProductDependencies = (
+			);
+			productName = SoulMateAppTests;
+			productReference = A01B7A9CE48204532875FEB1 /* SoulMateAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CA1EF1AC9F694363DE79BB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					35467771BE62D1F5D7332B51 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					508FE8D4E4384C56DDB0F3DA = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 643916F4D41DE900A9EF91BF /* Build configuration list for PBXProject "SoulMateApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D9171E72370941B034978035;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E08AA4128BC3EEA3A97108D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35467771BE62D1F5D7332B51 /* SoulMateApp */,
+				508FE8D4E4384C56DDB0F3DA /* SoulMateAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B010441A0D8307A547194593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6469E003D20EFEDC093F425 /* TokenEconomyServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F81D97EF60F1315F8A0B4A8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBC670FED3394FC2F22776AA /* AppCoordinator.swift in Sources */,
+				99CE6A588AE29BE85AC17065 /* ChatRoomView.swift in Sources */,
+				9C223E03395DAF2D64F7990F /* ChatService.swift in Sources */,
+				05C773C7CE674792C351901F /* ChatSession.swift in Sources */,
+				7D7AC6F5740C0969C878A5C0 /* ChatViewModel.swift in Sources */,
+				A49BA9235186C4369B03A6F9 /* Colors.swift in Sources */,
+				AAFA515915642D4F980605C5 /* CustomButton.swift in Sources */,
+				45ECC7A1A49CF3450EDBE708 /* DashboardView.swift in Sources */,
+				F430D8BD00871E533FEE25F3 /* DashboardViewModel.swift in Sources */,
+				D170D637D6F99EA8C402CFB7 /* Fonts.swift in Sources */,
+				5575828262E6E3085AE5D477 /* OnboardingView.swift in Sources */,
+				036849961DFAA2295F25C040 /* SessionManager.swift in Sources */,
+				28EF4195C4D5CC5899AFD8FD /* SoulMateApp.swift in Sources */,
+				5A94FD51DE19C06DA94E1D15 /* TimeInterval+Chunk.swift in Sources */,
+				980FA52046CE9B3D3038DE17 /* TimerOverlayView.swift in Sources */,
+				3A0788152335F4EC2B869BCB /* TokenBadge.swift in Sources */,
+				968C8A05691766B217352493 /* TokenEconomyService.swift in Sources */,
+				CCDD30495299F1156D36E4D7 /* TokenTransaction.swift in Sources */,
+				6AA19DFEFB141502BBCAA0C6 /* User.swift in Sources */,
+				588317EE28EDC5DF248D522F /* WalletView.swift in Sources */,
+				5A4B33A996031C84C994F370 /* WalletViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5D0F28EEAA60C11AEEEE925 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35467771BE62D1F5D7332B51 /* SoulMateApp */;
+			targetProxy = E9A8248DCDE77B43D4FACCC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09A12C22E643E16168352D53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Soul Mate";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.soulmate.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FB3E3CAFCB00036C51C78AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Soul Mate";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.soulmate.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3014CB9BF3499111D62B7A2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5C3655884050135EF96A7289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.soulmate.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulMateApp.app/SoulMateApp";
+			};
+			name = Release;
+		};
+		5E5D8B4275850CB095004187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BF77C9DF2EA3A1B3BD86F388 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.soulmate.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulMateApp.app/SoulMateApp";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		643916F4D41DE900A9EF91BF /* Build configuration list for PBXProject "SoulMateApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3014CB9BF3499111D62B7A2B /* Debug */,
+				5E5D8B4275850CB095004187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		723A99F3F1BCAF2E7B0E642B /* Build configuration list for PBXNativeTarget "SoulMateApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A12C22E643E16168352D53 /* Debug */,
+				0FB3E3CAFCB00036C51C78AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CB31BC789CD4EE437225BDFE /* Build configuration list for PBXNativeTarget "SoulMateAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF77C9DF2EA3A1B3BD86F388 /* Debug */,
+				5C3655884050135EF96A7289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CA1EF1AC9F694363DE79BB1 /* Project object */;
+}

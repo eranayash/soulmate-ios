@@ -1,0 +1,51 @@
+name: SoulMateApp
+options:
+  bundleIdPrefix: com.soulmate
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  SoulMateApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: SoulMateApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.soulmate.app
+        INFOPLIST_KEY_CFBundleDisplayName: Soul Mate
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  SoulMateAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: SoulMateAppTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.soulmate.app.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: SoulMateApp
+
+schemes:
+  SoulMateApp:
+    build:
+      targets:
+        SoulMateApp: all
+    test:
+      targets:
+        - SoulMateAppTests
